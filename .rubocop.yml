@@ -1,0 +1,50 @@
+AllCops:
+  Exclude:
+    - "config/**/*"
+    - "libs/**/*"
+Style/Documentation:
+  Enabled: false
+Layout/LineLength:
+  AutoCorrect: true
+  Max: 90
+Metrics/ClassLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: true
+Style/ClassAndModuleChildren:
+  AutoCorrect: true
+  EnforcedStyle: nested
+Style/ClassMethods:
+  AutoCorrect: true
+Layout/IndentationConsistency:
+  Enabled: true
+  AutoCorrect: true
+  EnforcedStyle: indented_internal_methods
+Layout/EndAlignment:
+  Enabled: true
+  AutoCorrect: true
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  AutoCorrect: true
+  EnforcedStyle: indented
+  IndentationWidth: 0
