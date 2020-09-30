@@ -13,6 +13,7 @@ gem 'enum_help'
 gem 'devise'
 gem 'devise-jwt'
 gem 'sidekiq'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
