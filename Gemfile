@@ -11,7 +11,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
 gem 'enum_help'
 gem 'devise'
-gem 'devise-jwt'
+gem 'devise-jwt', '~> 0.8'
 gem 'sidekiq'
 gem 'redis'
 
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'pry'
   gem 'faker'
-
+  gem 'dotenv-rails'
 end
 
 group :development do

@@ -9,6 +9,24 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # Devise JWT Configuration. This config is applied to PatientUser model.
+  # ...
+  config.jwt do |jwt|
+    jwt.secret = ENV['DEVISE_JWT']
+    jwt.dispatch_requests = [
+      ['POST', %r{^/api/sessions$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/api/sessions$}]
+    ]
+    jwt.request_formats = {
+      user: [nil, :json]
+    }
+    jwt.expiration_time = 30.years.to_i
+  end
+
+  config.navigational_formats = []
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.

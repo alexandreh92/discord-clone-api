@@ -43,3 +43,6 @@
 
 # Ignores rspc coverage
 /coverage
+
+# Ignores ENV files
+.env.*
