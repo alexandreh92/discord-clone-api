@@ -1,5 +1,13 @@
 module Api
   class MessagesController < ApplicationController
+    def index
+      rooms = current_user.rooms.distinct(:id)
+
+      render json: RoomMessagesPresenter.new(
+        rooms: rooms
+      ).as_json
+    end
+
     def create
       message = current_user.user_room_messages.new(user_room_message_params)
 

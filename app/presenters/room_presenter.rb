@@ -9,10 +9,7 @@ class RoomPresenter
     {
       id: room.id,
       name: room.name,
-      server_id: room.server_id,
-      messages: UserRoomMessagesPresenter.new(
-        user_room_messages: room.user_room_messages
-      ).as_json
+      server_id: room.server_id
     }
   end
 end

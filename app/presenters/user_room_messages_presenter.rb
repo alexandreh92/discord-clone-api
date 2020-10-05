@@ -1,15 +1,24 @@
 class UserRoomMessagesPresenter
-  attr_reader :user_room_messages
+  attr_reader :room
 
-  def initialize(user_room_messages:)
-    @user_room_messages = user_room_messages
+  def initialize(room:)
+    @room = room
   end
 
   def as_json
-    user_room_messages.map do |user_room_message|
-      UserRoomMessagePresenter.new(
-        user_room_message: user_room_message
-      ).as_json
-    end
+    {
+      room_id: room.id,
+      messages: render_messages
+    }
   end
+
+  private
+
+    def render_messages
+      room.user_room_messages.map do |user_room_message|
+        UserRoomMessagePresenter.new(
+          user_room_message: user_room_message
+        ).as_json
+      end
+    end
 end

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       get :join, on: :collection
     end
     resources :rooms, only: %i[index create]
-    resources :messages, only: [:create]
+    resources :messages, only: %i[index create]
   end
 end
